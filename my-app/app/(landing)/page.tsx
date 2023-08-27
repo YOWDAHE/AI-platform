@@ -1,7 +1,11 @@
+import Navbar from "@/components/navbar"
 
 function LandingPage() {
   return (
-    <div>LandingPage</div>
+    <div>
+      {/* <Navbar /> */}
+      LandingPage....
+    </div>
   )
 }
 
