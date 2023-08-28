@@ -1,14 +1,12 @@
 import { UserButton } from "@clerk/nextjs";
-import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
+
+import Mobile_sidebar from "./mobil_sidebar";
 
 function Navbar() {
   return (
     <div className="flex justify-between py-3 px-3">
       <div>
-        <Button size="sm" variant='ghost' className="md:hidden">
-          <Menu />
-        </Button>
+        <Mobile_sidebar/>
         Name
       </div>
       <UserButton afterSignOutUrl="/" />
