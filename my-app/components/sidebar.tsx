@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
+import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils";
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 
@@ -55,6 +58,7 @@ const routes = [
 ];
 
 function Sidebar() {
+    const Pathname = usePathname();
   return (
     <div className="text-white">
       <div>
@@ -68,10 +72,13 @@ function Sidebar() {
         <div className="space-y-1">
           {routes.map((el) => {
             return (
-              <Link
-                href={el.href}
-                key={el.href}>
-                <div className="flex pl-3 hover:bg-white/10 p-3 transition-all">
+              <Link href={el.href} key={el.href}>
+                <div
+                  className={
+                    cn("flex pl-3  p-3 transition-all",
+                    Pathname == el.href ? "bg-white/10" : "hover:bg-white/10")
+                  }
+                >
                   <el.icon className={cn("h-5 w-5 mr-3", el.color)} />
                   {el.label}
                 </div>
