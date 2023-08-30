@@ -7,6 +7,9 @@ import Sidebar from "./sidebar";
 import { useEffect, useState } from "react";
 
 function Mobile_sidebar() {
+
+  //solution for hidration problems
+  //SolutionH
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -15,7 +18,8 @@ function Mobile_sidebar() {
   if (!isMounted) {
     return null;  
   }
-
+  //endSolutionH
+  
   return (
     <Sheet>
       <SheetTrigger>
