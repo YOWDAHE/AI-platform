@@ -11,7 +11,9 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         </div>
         <div className="w-full">
           <Navbar />
-          {children}
+          <div className="p-4">
+            {children}
+          </div>
         </div>
       </div>
     </div>
