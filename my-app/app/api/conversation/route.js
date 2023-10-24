@@ -1,6 +1,11 @@
 const { TextServiceClient } = require("@google-ai/generativelanguage").v1beta2;
+const { error } = require("console");
 const { GoogleAuth } = require("google-auth-library");
-require('dotenv').config();
+const configFile = require('dotenv').config({path: '../../../.env'});
+
+if (configFile.error) {
+    throw configFile.error;
+}
 
 // import { auth } from "@clerk/nextjs";
 // import { TextServiceClient } from "@google-ai/generativelanguage";
@@ -9,7 +14,7 @@ require('dotenv').config();
 
 const MODEL_NAME = "models/text-bison-001";
 const API_KEY = process.env.API_KEY;
-console.log("the key: ", API_KEY );
+console.log("the key: ", process.env.API_KEY );
 
 const client = new TextServiceClient({
     authClient: new GoogleAuth().fromAPIKey(API_KEY),
